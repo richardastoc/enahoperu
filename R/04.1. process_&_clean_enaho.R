@@ -11,8 +11,7 @@
 #' clean_data(enaho_bind_mod03,enaho_bind_mod05,enaho_bind_mod85)
 clean_data=function(enaho_bind_mod03,
                     enaho_bind_mod05,
-                    enaho_bind_mod85,
-                    caracter){
+                    enaho_bind_mod85){
 #0. packages
 memory.limit (2000000)
 
@@ -160,10 +159,10 @@ enaho_temp_mod85$'P2_1$08'<- factor(enaho_temp_mod85$'P2_1$08',labels = c(get_la
 enaho_mod03_df<-enaho_temp_mod03%>%
   mutate(quarter=str_extract(period_mod,'Trimestre [0-9]'))%>%
   mutate(year=case_when(
-                        quarter=='Trimestre 1'~str_c(caracter,'Q1'),
-                        quarter=='Trimestre 2'~str_c(caracter,'Q2'),
-                        quarter=='Trimestre 3'~str_c(caracter,'Q3'),
-                        quarter=='Trimestre 4'~str_c(caracter,'Q4'),
+                        quarter=='Trimestre 1'~str_c(ayo,'Q1'),
+                        quarter=='Trimestre 2'~str_c(ayo,'Q2'),
+                        quarter=='Trimestre 3'~str_c(ayo,'Q3'),
+                        quarter=='Trimestre 4'~str_c(ayo,'Q4'),
                         TRUE~'Incoherencia'
                         ),
          ubigeo=str_sub(UBIGEO,1,4)
@@ -174,7 +173,7 @@ enaho_mod03_df<-enaho_temp_mod03%>%
   # )%>%
   # filter(str_sub(ubigeo,1,2)=='05')%>%
   select(
-    -caracter,
+    -ayo,
     -MES,
     -quarter,
     -UBIGEO
@@ -193,10 +192,10 @@ enaho_mod03_df<-enaho_temp_mod03%>%
 enaho_mod05_df<-enaho_temp_mod05%>%
   mutate(quarter=str_extract(period_mod,'Trimestre [0-9]'))%>%
   mutate(year=case_when(
-    quarter=='Trimestre 1'~str_c(caracter,'Q1'),
-    quarter=='Trimestre 2'~str_c(caracter,'Q2'),
-    quarter=='Trimestre 3'~str_c(caracter,'Q3'),
-    quarter=='Trimestre 4'~str_c(caracter,'Q4'),
+    quarter=='Trimestre 1'~str_c(ayo,'Q1'),
+    quarter=='Trimestre 2'~str_c(ayo,'Q2'),
+    quarter=='Trimestre 3'~str_c(ayo,'Q3'),
+    quarter=='Trimestre 4'~str_c(ayo,'Q4'),
     TRUE~'Incoherencia'
   ),
   ubigeo=str_sub(UBIGEO,1,4)
@@ -207,7 +206,7 @@ enaho_mod05_df<-enaho_temp_mod05%>%
   # )%>%
   # filter(str_sub(ubigeo,1,2)=='05')%>%
   select(
-    -caracter,
+    -ayo,
     -MES,
     -quarter,
     -UBIGEO
@@ -232,10 +231,10 @@ enaho_mod05_df<-enaho_temp_mod05%>%
 enaho_mod85_df<-enaho_temp_mod85%>%
   mutate(quarter=str_extract(period_mod,'Trimestre [0-9]'))%>%
   mutate(year=case_when(
-    quarter=='Trimestre 1'~str_c(caracter,'Q1'),
-    quarter=='Trimestre 2'~str_c(caracter,'Q2'),
-    quarter=='Trimestre 3'~str_c(caracter,'Q3'),
-    quarter=='Trimestre 4'~str_c(caracter,'Q4'),
+    quarter=='Trimestre 1'~str_c(ayo,'Q1'),
+    quarter=='Trimestre 2'~str_c(ayo,'Q2'),
+    quarter=='Trimestre 3'~str_c(ayo,'Q3'),
+    quarter=='Trimestre 4'~str_c(ayo,'Q4'),
     TRUE~'Incoherencia'
   ),
   ubigeo=str_sub(UBIGEO,1,4)
@@ -246,7 +245,7 @@ enaho_mod85_df<-enaho_temp_mod85%>%
   # )%>%
   # filter(str_sub(ubigeo,1,2)=='05')%>%
   select(
-    -caracter,
+    -ayo,
     -MES,
     -quarter,
     -UBIGEO

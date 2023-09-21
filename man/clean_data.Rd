@@ -4,7 +4,7 @@
 \alias{clean_data}
 \title{Limpieza de datos, corregir factores de expansion y ubigeo}
 \usage{
-clean_data(enaho_bind_mod03, enaho_bind_mod05, enaho_bind_mod85, caracter)
+clean_data(enaho_bind_mod03, enaho_bind_mod05, enaho_bind_mod85)
 }
 \arguments{
 \item{enaho_bind_mod03}{df modulo 3}

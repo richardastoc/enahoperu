@@ -100,6 +100,8 @@ for (l in 1:nrow(temp_raw_links)) {
                              str_trim())
         )
 
+      names(data[[i]])[str_detect(names(data[[i]]),str_to_upper(str_c('\xf1')))]='ayo'
+
     }
 
     unlink(list.files(),recursive = TRUE)
@@ -120,6 +122,8 @@ for (l in 1:nrow(temp_raw_links)) {
                              str_trim())
         )
 
+      names(data[[i]])[str_detect(names(data[[i]]),str_to_upper(str_c('\xf1')))]='ayo'
+
     }
 
     unlink(list.files(),recursive = TRUE)
@@ -139,6 +143,8 @@ for (l in 1:nrow(temp_raw_links)) {
                            str_remove(temp_raw_links$period[l],'\n')%>%
                              str_trim())
         )
+
+      names(data[[i]])[str_detect(names(data[[i]]),str_to_upper(str_c('\xf1')))]='ayo'
 
     }
 
