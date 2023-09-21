@@ -17,7 +17,7 @@ library(tidyverse)
 library(lubridate)
 
 #1. PANEL DATA ENAHO MOD03
-enaho_mod03_df<-read_rds('enaho_clean_mod03.rds')
+#enaho_mod03_df<-read_rds('enaho_clean_mod03.rds')
 
 #names(enaho_mod03_df)
 

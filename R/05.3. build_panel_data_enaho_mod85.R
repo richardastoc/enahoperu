@@ -17,7 +17,7 @@ library(lubridate)
 
 #1. PANEL DATA ENAHO MOD85
 
-enaho_mod85_df<-read_rds('enaho_clean_mod85.rds')
+#enaho_mod85_df<-read_rds('enaho_clean_mod85.rds')
 
 #names(enaho_mod85_df)
 
