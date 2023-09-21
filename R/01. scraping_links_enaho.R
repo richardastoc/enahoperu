@@ -86,7 +86,7 @@ temp_year<-read_html(page_to_year)%>%
   html_text()
 
 interest_year<-which(str_detect(temp_year,start_date))
-complete_year<-which(str_detect(temp_year,end_year))
+complete_year<-which(str_detect(temp_year,end_date))
 # 2.4 access to trim for every year
 
 links_year_temp<-list()
