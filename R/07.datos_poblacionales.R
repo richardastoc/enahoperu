@@ -207,7 +207,7 @@ poblacion_data=function(start_date,end_date,tildes){
     temp_namex=str_sub(temp_provincias2[i],1,ub_ini2)
     temp_namey=str_sub(temp_provincias2[i],ub_end2,str_length(temp_provincias2[i]))
     name_raw2[[i]]=tibble(ubigeo=temp_namex,
-                         provincia=chartr("ÁÉÍÓÚ", "AEIOU", toupper(temp_namey))
+                         provincia=chartr(tildes, "AEIOU", toupper(temp_namey))
     )
   }
 
