@@ -2,14 +2,16 @@
 #'
 #' @param enaho_panel_data df de enaho
 #' @param hist_df df de ejecucion
+#' @param pob_df
 #'
 #' @return df conjunto
 #' @export
 #'
 #' @examples
-#' al_data(enaho_panel_data,hist_df)
+#' al_data(enaho_panel_data,hist_df,pob_df)
 al_data=function(enaho_panel_data,
-                 hist_df){#0. packages
+                 hist_df,
+                 pob_df){#0. packages
 memory.limit (2000000)
 
 if (!"sjlabelled" %in% installed.packages()[,"Package"]){install.packages("sjlabelled")}
@@ -28,6 +30,8 @@ mef<-hist_df%>%
 
 df_country<-enaho%>%
   left_join(mef,
+            by=c('ubigeo','year'))%>%
+  left_join(pob_df,
             by=c('ubigeo','year'))
 
 
