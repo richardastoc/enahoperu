@@ -2,16 +2,23 @@
 % Please edit documentation in R/07.datos_poblacionales.R
 \name{poblacion_data}
 \alias{poblacion_data}
-\title{scraping daos de datos poblacionales}
+\title{Title extrae los datos de poblacion provincial}
 \usage{
-poblacion_data()
+poblacion_data(start_date, end_date, tildes)
+}
+\arguments{
+\item{start_date}{periodo inicial}
+
+\item{end_date}{periodo final}
+
+\item{tildes}{string de tildes en mayuscula}
 }
 \value{
-df poblacional
+el df de poblacion
 }
 \description{
-scraping daos de datos poblacionales
+Title extrae los datos de poblacion provincial
 }
 \examples{
-poblacion_data()
+poblacion_data(start_date,end_date,tildes)
 }
