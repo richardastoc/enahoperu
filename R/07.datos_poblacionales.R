@@ -284,12 +284,20 @@ poblacion_data=function(start_date,end_date,tildes){
                         names_to = 'year',
                         values_to = 'POB')
 
-  data_raw17$POB= log(as.numeric(str_remove_all(data_raw17$POB,' ')))
+  data_raw17$POB= as.numeric(str_remove_all(data_raw17$POB,' '))
 
-  pob_df=pob_raw%>%full_join(data_raw17)%>%
+  data_raw17$provincia= chartr(tildes, "AEIOU", toupper(data_raw17$provincia))
+
+  data_raw_pob17=data_raw17%>%
+    left_join(ubigeo_and_name2,
+              by='provincia')%>%
+    mutate(POB=log(POB))
+
+  pob_df=pob_raw%>%full_join(data_raw_pob17)%>%
     arrange(year)%>%
     filter(year<=as.character(end_date),year>=as.character(start_date))%>%
     mutate(provincia_pob=provincia)
+
 
   driver$close()
 
