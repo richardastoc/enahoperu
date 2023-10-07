@@ -26,7 +26,7 @@ mef<-hist_df%>%
     TRUE~Entity
   ))%>%
   select(-Entity)%>%
-  arrange(provincia)
+  arrange(provincia_mef)
 
 df_country<-enaho%>%
   left_join(mef,
