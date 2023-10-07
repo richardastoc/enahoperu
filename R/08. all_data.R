@@ -21,7 +21,7 @@ library(lubridate)
 
 enaho<-enaho_panel_data
 mef<-hist_df%>%
-  mutate(provincia=case_when(
+  mutate(provincia_mef=case_when(
     Entity=='VILCASHUAMAN'~'VILCAS HUAMAN',
     TRUE~Entity
   ))%>%

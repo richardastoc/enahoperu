@@ -288,7 +288,8 @@ poblacion_data=function(start_date,end_date,tildes){
 
   pob_df=pob_raw%>%full_join(data_raw17)%>%
     arrange(year)%>%
-    filter(year<=as.character(end_date),year>=as.character(start_date))
+    filter(year<=as.character(end_date),year>=as.character(start_date))%>%
+    mutate(provincia_pob=provincia)
 
   driver$close()
 
